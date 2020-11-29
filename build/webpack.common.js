@@ -30,30 +30,33 @@ module.exports = {
       components: path.resolve(__dirname, '../src/js/components'),
       constants: path.resolve(__dirname, '../src/js/constants'),
       services: path.resolve(__dirname, '../src/js/services'),
+      styles: path.resolve(__dirname, '../src/scss/custom'),
       utils: path.resolve(__dirname, '../src/js/utils')
     }
   },
-  optimization: {
-    splitChunks: {
-      cacheGroups: {
-        default: false,
-        vendors: false,
-        vendor: {
-          name: 'vendor',
-          chunks: 'all',
-          test: /node_modules/
-        },
-        common: {
-          name: 'common',
-          minChunks: 2,
-          chunks: 'async',
-          priority: 10,
-          reuseExistingChunk: true,
-          enforce: true
-        }
-      }
-    }
-  },
+  // NOTE: commented because we dont need to split js files
+  // since this will be embeded, we just need a single js file
+  // optimization: {
+  //   splitChunks: {
+  //     cacheGroups: {
+  //       default: false,
+  //       vendors: false,
+  //       vendor: {
+  //         name: 'vendor',
+  //         chunks: 'all',
+  //         test: /node_modules/
+  //       },
+  //       common: {
+  //         name: 'common',
+  //         minChunks: 2,
+  //         chunks: 'async',
+  //         priority: 10,
+  //         reuseExistingChunk: true,
+  //         enforce: true
+  //       }
+  //     }
+  //   }
+  // },
   module: {
     rules: [
       {
