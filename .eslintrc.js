@@ -8,5 +8,15 @@ module.exports = {
   ],
   plugins: [
     'vue'
-  ]
+  ],
+  rules: {
+    'space-before-function-paren': [
+      'error',
+      {
+        anonymous: 'never',
+        named: 'never',
+        asyncArrow: 'never'
+      }
+    ]
+  }
 }

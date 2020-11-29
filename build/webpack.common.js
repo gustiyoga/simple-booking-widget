@@ -4,6 +4,17 @@ const HtmlWebPackPlugin = require('html-webpack-plugin')
 const Visualizer = require('webpack-visualizer-plugin')
 const { VueLoaderPlugin } = require('vue-loader')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const dotenv = require('dotenv')
+const webpack = require('webpack')
+
+// call dotenv and it will return an Object with a parsed key
+const env = dotenv.config().parsed
+
+// reduce it to a nice object, the same as before
+const envKeys = Object.keys(env).reduce((prev, next) => {
+  prev[`process.env.${next}`] = JSON.stringify(env[next])
+  return prev
+}, {})
 
 module.exports = {
   entry: {
@@ -13,6 +24,14 @@ module.exports = {
     path: path.resolve(__dirname, '../dist'),
     filename: './js/main.[hash].js',
     chunkFilename: './js/[name].[contenthash].bundle.js'
+  },
+  resolve: {
+    alias: {
+      components: path.resolve(__dirname, '../src/js/components'),
+      constants: path.resolve(__dirname, '../src/js/constants'),
+      services: path.resolve(__dirname, '../src/js/services'),
+      utils: path.resolve(__dirname, '../src/js/utils')
+    }
   },
   optimization: {
     splitChunks: {
@@ -114,6 +133,7 @@ module.exports = {
     ]
   },
   plugins: [
+    new webpack.DefinePlugin(envKeys),
     new CleanWebpackPlugin({}),
     new VueLoaderPlugin(),
     new HtmlWebPackPlugin({

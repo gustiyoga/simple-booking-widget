@@ -1,0 +1,27 @@
+html {
+  background-color: $white;
+  font-size: $main-font-size;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  min-width: 320px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  text-rendering: optimizeLegibility;
+  text-size-adjust: 100%;
+}
+
+body,
+button,
+input,
+select {
+  font-family: $family-sans-serif;
+}
+
+body {
+  background-color: $tea-green;
+  color: $grey;
+  font-size: 1em;
+  font-weight: 400;
+  line-height: 1.5;
+  overflow: hidden;
+}

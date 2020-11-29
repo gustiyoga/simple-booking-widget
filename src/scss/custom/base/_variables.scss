@@ -1,0 +1,18 @@
+// color
+$white: rgb(255, 255, 255) !default;
+$grey-lighter: rgb(241, 241, 241) !default;
+$grey: rgb(74, 74, 74) !default;
+$grey-darker: rgb(54, 54, 54) !default;
+
+$deep-saffron: #ffa630 !default;
+$tea-green: #d7e8ba !default;
+$cadet-blue: #4da1a9 !default;
+$bdazzled-blue: #2e5077 !default;
+$claret: #611C35 !default;
+
+$primary: $cadet-blue;
+$secondary: $deep-saffron;
+
+// typography
+$main-font-size: 16px;
+$family-sans-serif: BlinkMacSystemFont, -apple-system, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif !default;
