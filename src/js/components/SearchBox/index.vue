@@ -1,14 +1,13 @@
 <template>
-  <div class="search-wrapper">
-    <h2>Simple Booking Widget</h2>
+  <div class="search-input">
     <label for="search">Search</label>
     <input
       id="search"
       v-model="querySearch"
       type="text"
       placeholder="Enter keywords"
-      @keyup="doAutoSearch()"
-      @keyup.enter="doSearch()"
+      @input="doAutoSearch"
+      @keyup.enter="doSearch"
     >
   </div>
 </template>
@@ -19,7 +18,7 @@
 
 <script>
 import { mapState } from 'vuex'
-import { searchProduct } from 'services/search'
+import { searchProduct } from 'services/product'
 import { debounce } from 'utils/debounce'
 
 export default {

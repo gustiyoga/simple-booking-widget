@@ -2,12 +2,48 @@
   border-radius: 4px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  align-items: center;
   margin-right: 20px;
   margin-bottom: 20px;
   padding: 15px;
 
   :last-child {
     margin-right: 0;
+  }
+}
+
+.product-image {
+  max-width: 150px;
+  margin-right: 15px;
+}
+
+.product-body {
+  align-self: flex-start;
+  flex-basis: 100%;
+  display: flex;
+  flex-direction: column;
+
+  h4 {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+
+  p {
+    display: flex;
+    align-items: center;
+    line-height: 1;
+    margin-bottom: 10px;
+    span {
+      flex-basis: 100%;
+    }
+  }
+
+  button {
+    margin-top: auto;
+  }
+
+  img {
+    width: 20px;
   }
 }

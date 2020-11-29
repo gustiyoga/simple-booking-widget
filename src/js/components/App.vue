@@ -1,28 +1,37 @@
 <template>
   <div class="main">
-    <search-box />
-    <search-result />
+    <div class="title">
+      <h2>Simple Booking Widget</h2>
+      <search-box v-if="isShowSearch" />
+    </div>
+    <div class="body">
+      <search-result v-if="isShowSearch" />
+      <availability-check v-if="!isShowSearch" />
+    </div>
   </div>
 </template>
 
-<style scoped>
-  .main {
-    background-color: #FFF;
-    border: 1px #eaeaea solid;
-    border-radius: 3px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-    padding: 15px;
-  }
+<style lang="scss" scoped>
+@import './index.scss';
 </style>
 
 <script>
+import { mapState } from 'vuex'
 import SearchBox from './SearchBox/index.vue'
 import SearchResult from './SearchResult/index.vue'
+import AvailabilityCheck from './AvailabilityCheck/index.vue'
 
 export default {
+  name: 'MainApp',
   components: {
     SearchBox,
-    SearchResult
+    SearchResult,
+    AvailabilityCheck
+  },
+  computed: {
+    ...mapState({
+      isShowSearch: state => Object.keys(state.products.selectedProduct).length === 0 && state.products.selectedProduct.constructor === Object
+    })
   }
 }
 </script>

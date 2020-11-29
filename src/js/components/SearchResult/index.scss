@@ -1,24 +1,14 @@
-.search-result {
-  overflow: auto;
-  height: 400px;
-
-  &::-webkit-scrollbar {
-    width: 5px;
-  }
-  &::-webkit-scrollbar-track {
-    background: #fff; 
-  }
-  &::-webkit-scrollbar-thumb {
-    background: #888;
-    border-radius: 5px;
-  }
-  &::-webkit-scrollbar-thumb:hover {
-    background: #555; 
-  }
-}
+@import 'styles/base/variables';
+@import 'styles/base/grid';
 
 .product-list {
   display: grid;
-  grid-template-columns: repeat(auto-fill,minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fill,minmax(100%, 1fr));
   width: 100%;
+}
+
+@include tablet() {
+  .product-list{
+    grid-template-columns: repeat(auto-fill,minmax(500px, 1fr));
+  }
 }

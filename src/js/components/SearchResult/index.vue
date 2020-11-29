@@ -7,9 +7,10 @@
       <product-item
         v-for="product in products"
         :key="product.Id"
+        :product="product"
         :product-name="product.Name"
         :product-image="product.ImageUrl"
-        :product-short-description="product.ShortDescription"
+        :product-location="product.FormattedAddressName"
       />
     </div>
 
@@ -51,9 +52,6 @@ export default {
   created() {
     this.LOADING = LOADING
     this.EMPTY = EMPTY
-  },
-  methods: {
-
   }
 }
 </script>

@@ -5,7 +5,7 @@ import { store } from './store'
 
 // eslint-disable-next-line no-new
 new Vue({
-  el: '#app',
+  el: '#simple-booking-widget',
   render: h => h(App),
   store
 })

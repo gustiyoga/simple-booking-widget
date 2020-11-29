@@ -1,0 +1,23 @@
+@import 'styles/base/variables';
+@import 'styles/elements/scroll-bar';
+
+.main {
+  background-color: #FFF;
+  border: 1px #eaeaea solid;
+  border-radius: 3px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  padding: 15px;
+}
+
+.body {
+  max-height: 500px;
+  overflow: auto;
+
+  @include scroll-bar();
+}
+
+h2 {
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 15px;
+}
