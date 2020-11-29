@@ -1,0 +1,25 @@
+.search-wrapper {
+  margin-bottom: 20px;
+}
+h2 {
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 15px;
+}
+label {
+  display: none;
+}
+input {
+  background-color: #f1f1f1;
+  border-radius: 5px;
+  border: none;
+  font-size: 1rem;
+  outline: none;
+  padding: 8px;
+  width: 100%;
+  &:focus{
+    background-color: #ffffff;
+    border: none;
+    outline: none;
+  }
+}

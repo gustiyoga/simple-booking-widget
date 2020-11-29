@@ -1,0 +1,13 @@
+.product-item {
+  border-radius: 4px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  padding: 15px;
+
+  :last-child {
+    margin-right: 0;
+  }
+}
